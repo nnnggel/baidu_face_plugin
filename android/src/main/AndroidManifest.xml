@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.example.baidu_face_plugin.baidu_face_plugin">
+
+  <!-- 权限 -->
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.hardware.camera.autofocus"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+  <!-- 需要使用Feature -->
+  <uses-feature
+    android:name="android.hardware.camera"
+    android:required="false"/>
+  <uses-feature
+    android:name="android.hardware.camera.front"
+    android:required="false"/>
+  <uses-feature
+    android:name="android.hardware.camera.autofocus"
+    android:required="false"/>
+  <uses-feature
+    android:name="android.hardware.camera.flash"
+    android:required="false"/>
+
+</manifest>
