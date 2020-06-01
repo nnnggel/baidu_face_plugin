@@ -8,9 +8,6 @@ import java.util.List;
 
 public class Config {
 
-    public static String licenseID = "baidu-face-plugin-face-android";
-    public static String licenseFileName = "idl-license.face-android";
-
     public static List<LivenessTypeEnum> livenessList = new ArrayList<>();
     public static boolean isLivenessRandom = false;
 }

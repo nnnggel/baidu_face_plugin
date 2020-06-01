@@ -1,7 +1,7 @@
 name: baidu_face_plugin
 description: A Flutter plugin for baidu face recognization and liveness.
-version: 1.0.0
-homepage: https://github.com/nnnggel/gCaptcha
+version: 1.0.1
+homepage: https://github.com/nnnggel/baidu_face_plugin
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

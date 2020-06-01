@@ -35,7 +35,7 @@ signingConfigs {
 3 . 下载license放在实际项目中（/example/android/app/src/main/assets/idl-license.face-android）
 ![avatar](https://raw.githubusercontent.com/nnnggel/baidu_face_plugin/master/doc/license-config.png)
 
-4 . 在实际项目中增加入口 application class（参考 com.example.baidu_face_plugin.baidu_face_plugin_example.MainApplication），并修改实际项目 AndroidManifest.xml 的入口 application class（参考 example - AndroidManifest.xml ）
+4 . 在实际项目中增加入口 application class（参考 com.example.baidu_face_plugin.baidu_face_plugin_example.MainApplication），在"初始化SDK"的地方配置 License-ID 和 License-File-Name，并修改实际项目 AndroidManifest.xml 的入口 application class（参考 example - AndroidManifest.xml ）
 ```
 <application
     tools:replace="android:label"

@@ -36,7 +36,7 @@ public class MainApplication extends FlutterApplication {
 //        Config.livenessList.add(LivenessTypeEnum.HeadLeftOrRight);
 
         // 初始化SDK
-        FaceSDKManager.getInstance().initialize(this, Config.licenseID, Config.licenseFileName);
+        FaceSDKManager.getInstance().initialize(this, "baidu-face-plugin-face-android", "idl-license.face-android");
 
         // 设置 FaceConfig
         FaceConfig config = FaceSDKManager.getInstance().getFaceConfig();
