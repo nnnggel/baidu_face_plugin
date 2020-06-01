@@ -2,23 +2,16 @@ package com.example.baidu_face_plugin.baidu_face_plugin;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
-
 import androidx.annotation.NonNull;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * BaiduFacePlugin
@@ -69,10 +62,11 @@ public class BaiduFacePlugin implements PluginRegistry.ActivityResultListener, M
 
     @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i("BaiduFacePlugin", "onActivityResult: requestCode=" + requestCode + ", resultCode=" + resultCode + ", data=" + data);
+        Log.i("BaiduFacePlugin",
+            "onActivityResult: requestCode=" + requestCode + ", resultCode=" + resultCode + ", data=" + data);
         switch (requestCode) {
             case LIVENESS_REQUEST_CODE: {
-                if (livenessCallback != null) {
+                if (livenessCallback != null && data != null) {
                     if (data.getBooleanExtra("success", false)) {
                         livenessCallback.sucess(data.getStringExtra("image"));
                     } else {
@@ -82,7 +76,7 @@ public class BaiduFacePlugin implements PluginRegistry.ActivityResultListener, M
                 break;
             }
             case DETECT_REQUEST_CODE: {
-                if (detectCallback != null) {
+                if (detectCallback != null && data != null) {
                     if (data.getBooleanExtra("success", false)) {
                         detectCallback.sucess(data.getStringExtra("image"));
                     } else {
@@ -113,6 +107,7 @@ public class BaiduFacePlugin implements PluginRegistry.ActivityResultListener, M
     }
 
     class LivenessCallback {
+
         private Result result;
 
         public LivenessCallback(Result result) {
@@ -135,6 +130,7 @@ public class BaiduFacePlugin implements PluginRegistry.ActivityResultListener, M
     }
 
     class DetectCallback {
+
         private Result result;
 
         public DetectCallback(Result result) {
