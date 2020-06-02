@@ -1,6 +1,6 @@
 name: baidu_face_plugin
 description: A Flutter plugin for baidu face recognization and liveness.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/nnnggel/baidu_face_plugin
 
 environment:
