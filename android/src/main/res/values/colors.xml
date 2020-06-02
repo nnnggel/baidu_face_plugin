@@ -1,0 +1,5 @@
+<resources>
+    <color name="FACE_DETECT_ROUND_VIEW_COLOR_BG">#2F2F33</color>
+    <color name="FACE_DETECT_ROUND_VIEW_COLOR_RECT">#FFFFFF</color>
+    <color name="FACE_DETECT_ROUND_VIEW_COLOR_ROUND">#FFA800</color>
+</resources>

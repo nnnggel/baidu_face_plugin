@@ -17,26 +17,25 @@ public class MainApplication extends FlutterApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        setFaceConfig();
+        initFacePlugin();
     }
 
-    private void setFaceConfig() {
+    private void initFacePlugin() {
+        // 初始化SDK
+        FaceSDKManager.getInstance().initialize(this, "baidu-face-plugin-face-android", "idl-license.face-android");
+
         // 随机动作
         Config.isLivenessRandom = true;
-
         // 根据需求添加活体动作
         Config.livenessList.clear();
         Config.livenessList.add(LivenessTypeEnum.Eye);
-        // FIXME test
+        // TODO test
 //        Config.livenessList.add(LivenessTypeEnum.Mouth);
 //        Config.livenessList.add(LivenessTypeEnum.HeadUp);
 //        Config.livenessList.add(LivenessTypeEnum.HeadDown);
 //        Config.livenessList.add(LivenessTypeEnum.HeadLeft);
 //        Config.livenessList.add(LivenessTypeEnum.HeadRight);
 //        Config.livenessList.add(LivenessTypeEnum.HeadLeftOrRight);
-
-        // 初始化SDK
-        FaceSDKManager.getInstance().initialize(this, "baidu-face-plugin-face-android", "idl-license.face-android");
 
         // 设置 FaceConfig
         FaceConfig config = FaceSDKManager.getInstance().getFaceConfig();
@@ -53,20 +52,19 @@ public class MainApplication extends FlutterApplication {
         config.setOcclusionValue(FaceEnvironment.VALUE_OCCLUSION);
         config.setCheckFaceQuality(true);
         config.setFaceDecodeNumberOfThreads(2);
-
         // 关闭提示音
         config.setSound(false);
-
         FaceSDKManager.getInstance().setFaceConfig(config);
 
+        // 初始化资源文件
         initResMap();
     }
 
-    public void initResMap() {
+    private void initResMap() {
         Map<String, Map<FaceStatusEnum, Integer>> soundMap = new HashMap<>();
         Map<String, Map<FaceStatusEnum, Integer>> tipsMap = new HashMap<>();
 
-        // TODO language 多语言
+        // language 多语言
         Map<FaceStatusEnum, Integer> zhSoundMap = new HashMap<>();
         zhSoundMap.put(FaceStatusEnum.Detect_NoFace, com.example.baidu_face_plugin.baidu_face_plugin.R.raw.detect_face_in);
         zhSoundMap.put(FaceStatusEnum.Detect_FacePointOut, com.example.baidu_face_plugin.baidu_face_plugin.R.raw.detect_face_in);

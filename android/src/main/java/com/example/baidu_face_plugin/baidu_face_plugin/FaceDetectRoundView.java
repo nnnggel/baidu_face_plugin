@@ -36,9 +36,9 @@ public class FaceDetectRoundView extends View {
     public static final int PATH_SMALL_SPACE = 12;
     public static final int PATH_WIDTH = 4;
 
-    public static final int COLOR_BG = Color.parseColor("#2F2F33");
-    public static final int COLOR_RECT = Color.parseColor("#FFFFFF");
-    public static final int COLOR_ROUND = Color.parseColor("#FFA800");
+//    public static final int COLOR_BG = Color.parseColor("#2F2F33");
+//    public static final int COLOR_RECT = Color.parseColor("#FFFFFF");
+//    public static final int COLOR_ROUND = Color.parseColor("#FFA800");
 
     private PathEffect mFaceRoundPathEffect = null;
     // new DashPathEffect(new float[]{PATH_SPACE, PATH_SPACE}, 1);
@@ -68,27 +68,27 @@ public class FaceDetectRoundView extends View {
                         ? pathSmallSpace : pathSpace}, 1);
 
         mBGPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mBGPaint.setColor(COLOR_BG);
+        mBGPaint.setColor(getResources().getColor(R.color.FACE_DETECT_ROUND_VIEW_COLOR_BG));
         mBGPaint.setStyle(Paint.Style.FILL);
         mBGPaint.setAntiAlias(true);
         mBGPaint.setDither(true);
 
         mPathPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPathPaint.setColor(COLOR_ROUND);
+        mPathPaint.setColor(getResources().getColor(R.color.FACE_DETECT_ROUND_VIEW_COLOR_ROUND));
         mPathPaint.setStrokeWidth(pathWidth);
         mPathPaint.setStyle(Paint.Style.STROKE);
         mPathPaint.setAntiAlias(true);
         mPathPaint.setDither(true);
 
         mFaceRectPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mFaceRectPaint.setColor(COLOR_RECT);
+        mFaceRectPaint.setColor(getResources().getColor(R.color.FACE_DETECT_ROUND_VIEW_COLOR_RECT));
         mFaceRectPaint.setStrokeWidth(pathWidth);
         mFaceRectPaint.setStyle(Paint.Style.STROKE);
         mFaceRectPaint.setAntiAlias(true);
         mFaceRectPaint.setDither(true);
 
         mFaceRoundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mFaceRoundPaint.setColor(COLOR_ROUND);
+        mFaceRoundPaint.setColor(getResources().getColor(R.color.FACE_DETECT_ROUND_VIEW_COLOR_ROUND));
         mFaceRoundPaint.setStyle(Paint.Style.FILL);
         mFaceRoundPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         mFaceRoundPaint.setAntiAlias(true);
