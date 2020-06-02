@@ -92,5 +92,5 @@ DetectResult result = await new BaiduFacePlugin().detect();
 关于依赖关系
 > 官方示例项目中的依赖关系为 app->faceplatform-ui->faceplatform，集成时发现部分配置需要修改 faceplatform-ui 实现，所以将 faceplatform-ui 的源码拷贝在到了 plugin module 进行调整。
 
-## 官方集成文档
+## 官方集成文档 
 > [安卓-有动作活体版](https://ai.baidu.com/ai-doc/FACE/Mk37c1pue)
